@@ -1,4 +1,6 @@
 accounts.txt
 node_modules/
 .env
-.DS_Store
+.env.local
+.vercel
+serviceAccountKey.json
