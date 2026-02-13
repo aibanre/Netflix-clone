@@ -55,4 +55,15 @@ app.post('/login', async (req, res) => {
     }
 });
 
+app.get('/api/accounts', (req, res) => {
+    const fs = require('fs');
+    try {
+        const data = fs.readFileSync(path.join(__dirname, '..', 'accounts.txt'), 'utf8');
+        res.setHeader('Content-Type', 'text/plain');
+        res.send(data);
+    } catch (err) {
+        res.status(404).json({ error: 'Accounts file not found' });
+    }
+});
+
 module.exports = app;

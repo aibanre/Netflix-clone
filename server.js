@@ -20,6 +20,10 @@ app.post('/login', (req, res) => {
     });
 });
 
+app.get('/api/accounts', (req, res) => {
+    res.sendFile(path.join(__dirname, 'accounts.txt'));
+});
+
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
